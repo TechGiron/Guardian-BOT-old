@@ -1,4 +1,4 @@
-import asyncio, re, ast, math, logging, pyrogram
+import asyncio, re, ast, math, logging, pyrogram, time
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 from utils import get_shortlink 
@@ -158,6 +158,24 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         imdb = await get_poster(search)
     else:
         imdb = None
+        try:
+    await msg.reply_text(
+        "Searching...",
+        disable_notification=True,
+    )
+except:
+    pass
+try:
+    await msg.reply_text(
+        pmtext.format(search, int(total_results), media_type if media_type else "", int(time.time() - query_time), imdb if imdb else ""),
+        reply_markup=InlineKeyboardMarkup(btn),
+        disable_web_page_preview=True,
+        quote=True,
+        parse_mode="markdown",
+        disable_notification=True,
+    )
+except:
+    pass
     TEMPLATE = IMDB_TEMPLATE
     if imdb:
         cap = TEMPLATE.format(
