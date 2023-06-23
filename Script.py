@@ -2,19 +2,19 @@ class script(object):
     HELP_TXT = """𝙷𝙴𝚈 {}\n𝙷𝙴𝚁𝙴 𝙸𝚂 𝙼𝚈 𝙷𝙴𝙻𝙿 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
 
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴 : {}
-✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁 : <a href=https://t.me/mr_MKN>𝙈𝙧.𝙈𝙆𝙉 𝙏𝙂</a>
+✯ 𝓙𝓸𝓲𝓷 𝓒𝓱𝓪𝓷𝓷𝓮𝓵 : <a href=https://t.me/Botz_Guardian_Update>𝐁𝐨𝐭𝐳 𝐆𝐮𝐚𝐫𝐝𝐢𝐚𝐧 𝐔𝐩𝐝𝐚𝐭𝐞</a>
 ✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
 ✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 : 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
 ✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴 : 𝙼𝙾𝙽𝙶𝙾-𝙳𝙱
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁 : 𝙰𝙽𝚈𝚆𝙷𝙴𝚁𝙴
-✯ 𝙱𝚄𝙸𝙻𝙳 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: 𝙿𝚁𝙾𝙵𝙴𝚂𝚂𝙾𝚁-𝙱𝙾𝚃 𝚟3.0.0"""
+✯ 𝙱𝚄𝙸𝙻𝙳 𝚅𝙴𝚁𝚂𝙸𝙾𝙽: 𝑮𝒖𝒂𝒓𝒅𝒊𝒂𝒏 𝑩𝒐𝒕 𝚟3.0.0"""
 
     SOURCE_TXT = """<b>NOTE:</b>
-- 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴 𝙲𝙻𝙸𝙲𝙺 𝙷𝙴𝚁 👉 :<a href=https://github.com/MrMKN/PROFESSOR-BOT>𝐏𝐑𝐎𝐅𝐄𝐒𝐒𝐎𝐑-𝐁𝐎𝐓</a>
+- 𝐂𝐫𝐞𝐚𝐭𝐞 𝐘𝐨𝐮𝐫 𝐎𝐰𝐧 𝐁𝐨𝐭👉 :<a href=https://t.me/Botz_Guardian_Update>𝑮𝒖𝒂𝒓𝒅𝒊𝒂𝒏 𝑩𝒐𝒕</a>
 
-<b>DEVS:</b>
-- 𝙳𝚎𝚟 1<a href=https://t.me/mr_MKN>𝙼𝚛.𝙼𝙺𝙽 𝚃𝙶</a>
-- 𝙳𝚎𝚟 2<a href=https://t.me/AboutAadhi>𝙰𝙰𝙳𝙷𝙸</a>"""
+<b>𝐆𝐫𝐨𝐮𝐩𝐬::</b>
+- 𝐆𝐫𝐨𝐮𝐩𝐬 𝟏<a href=https://t.me/moviesguardianss>𝐌𝐨𝐯𝐢𝐞𝐬 𝐆𝐮𝐚𝐫𝐝𝐢𝐚𝐧𝐬</a>
+- 𝐆𝐫𝐨𝐮𝐩𝐬 𝟐<a href=https://t.me/moviesguardianss2>𝐌𝐨𝐯𝐢𝐞𝐬 𝐆𝐮𝐚𝐫𝐝𝐢𝐚𝐧𝐬1</a>"""
 
     FILE_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝐅𝐢𝐥𝐞 𝐒𝐭𝐨𝐫𝐞 𝐌𝐨𝐝𝐮𝐥𝐞../
 
