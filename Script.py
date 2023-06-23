@@ -28,9 +28,9 @@ class script(object):
 
 ⪼ 𝐄𝐱𝐚𝐦𝐩𝐥𝐞 ›
 
-<code>/batch https://t.me/mkn_bots_updates https://t.me/mkn_bots_updates</code>
+<code>/batch https://t.me/Botz_Guardian_Update https://t.me/Botz_Guardian_Update</code>
 
-𝙲𝚁𝙴𝙳𝙸𝚃𝚂 ›› <a href=https://t.me/mkn_bots_updates><b>𝙼𝙺𝙽 𝙱𝙾𝚃𝚉</b></a>"""
+Contact ›› <a href=https://t.me/Botz_Guardian_Update><b>𝐁𝐨𝐭𝐳 𝐆𝐮𝐚𝐫𝐝𝐢𝐚𝐧 𝐔𝐩𝐝𝐚𝐭𝐞</b></a>"""
     
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
