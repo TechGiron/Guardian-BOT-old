@@ -126,26 +126,6 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         else:
             return 
     else:
-        try:
-            search_message = await msg.reply_text(
-                "Searching...",
-                disable_notification=True,
-            )
-        except:
-           pass
-        # Your search query code here
-        # Once the search is complete, replace the "Searching..." message with the results
-        try:
-            await search_message.edit_text(
-                pmtext.format(search, int(total_results), media_type if media_type else "", imdb if imdb else ""),
-                reply_markup=InlineKeyboardMarkup(btn),
-                disable_web_page_preview=True,
-                quote=True,
-                parse_mode="markdown",
-                disable_notification=True,
-            )
-        except:
-            pass
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = pmspoll
     pre = 'pmfilep' if PROTECT_CONTENT else 'pmfile'
