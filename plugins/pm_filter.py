@@ -112,7 +112,15 @@ async def pm_spoll_tester(bot, query):
         await k.delete()
 
 
-async def pm_AutoFilter(client, msg, pmspoll=False):    
+async def pm_AutoFilter(client, msg, pmspoll=False):   
+    try:
+        await msg.reply_text(
+            "Searching...",
+            disable_notification=True,
+        )
+    except:
+        pass
+
     if not pmspoll:
         message = msg   
         if message.text.startswith("/"): return  # ignore commands
@@ -159,20 +167,13 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
     else:
         imdb = None
 
-    # Start time of the search query
-    query_start_time = time.time()
-
     try:
-        search_result = "message reply in telegram \"kgf\"\nHere is what I found for your query kgf"
-    
-        # Calculate the time taken for the search query
-        search_time = time.time() - query_start_time
-    
-        # Replace "{time}" in the search result with the actual search time
-        search_result_with_time = search_result.replace("{time}", str(search_time))
-    
         await msg.reply_text(
-            search_result_with_time,
+            pmtext.format(search, int(total_results), media_type if media_type else "", int(time.time() - query_time), imdb if imdb else ""),
+            reply_markup=InlineKeyboardMarkup(btn),
+            disable_web_page_preview=True,
+            quote=True,
+            parse_mode="markdown",
             disable_notification=True,
         )
     except:
