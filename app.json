@@ -1,10 +1,10 @@
 {
-    "name": "PROFESSOR-BOT",
+    "name": "Guardian-BOT",
     "description": "the telegram Autofilter bot",
-    "logo": "https://graph.org/file/b7e8484f6395a180b6380.jpg",
+    "logo": "https://graph.org/file/808b99244473b4ba80f2e.jpg",
     "keywords": ["telegram", "auto-filter", "MrMKN"],
-    "website": "https://github.com/MrMKN/PROFESSOR-BOT",
-    "repository": "https://github.com/MrMKN/PROFESSOR-BOT",
+    "website": "https://github.com/TechGiron/Guardian-BOT",
+    "repository": "https://github.com/TechGiron/Guardian-BOT",
     "env": {
         "WEBHOOK": {
             "description": "True/False if your server is web support required? the value is True else False",
@@ -82,12 +82,12 @@
         },
         "IMDB": {
             "description": "Imdb, the view of information when making True/False",
-            "value": "True",
+            "value": "False",
             "required": false     
         },
         "PM_IMDB": {
             "description": "pm Imdb, the view of information when making True/False",
-            "value": "True",
+            "value": "False",
             "required": false     
         },
         "IMDB_TEMPLATE": {
@@ -122,7 +122,7 @@
         },
         "WELCOM_PIC": {
             "description": "Welcome message pic (telegraph link)",
-            "value": "",
+            "value": "https://graph.org/file/808b99244473b4ba80f2e.jpg",
             "required": false
         },
         "WELCOM_TEXT": {
@@ -147,7 +147,7 @@
         },
         "BUTTON_LOCK": {
             "description": "Button alert set True to on / False to off",
-            "value": "True",
+            "value": "False",
             "required": false
         },
         "RemoveBG_API": {
