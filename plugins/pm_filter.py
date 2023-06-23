@@ -120,9 +120,34 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             return
         if 2 < len(message.text) < 100:
             search = message.text
+            try:
+                if message.reply_to_message:
+                    search_message = await message.reply_to_message.reply_text(
+                        "Searching...",
+                        disable_notification=True,
+                    )
+                else:
+                    search_message = await msg.reply_text(
+                        "Searching...",
+                        disable_notification=True,
+                    )
+            except:
+                pass
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:               
-                return await pm_spoll_choker(msg)              
+                return await pm_spoll_choker(msg)   
+            if search_message:
+                try:
+                    await search_message.edit_text(
+                        pmtext.format(search, int(total_results), media_type if media_type else "", int(time.time() - query_time), imdb if imdb else ""),
+                        reply_markup=InlineKeyboardMarkup(btn),
+                        disable_web_page_preview=True,
+                        quote=True,
+                        parse_mode="markdown",
+                        disable_notification=True,
+                    )
+                except:
+                    pass
         else:
             return 
     else:
