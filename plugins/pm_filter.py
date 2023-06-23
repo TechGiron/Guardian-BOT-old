@@ -114,7 +114,14 @@ async def pm_spoll_tester(bot, query):
 
 async def pm_AutoFilter(client, msg, pmspoll=False):    
     if not pmspoll:
-        message = msg   
+        message = msg  
+    try:
+        await msg.reply_to_message.reply_text(
+            "Searching...",
+            disable_notification=True,
+        )
+    except:
+        pass
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
