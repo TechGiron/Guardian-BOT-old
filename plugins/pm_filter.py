@@ -158,8 +158,6 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         imdb = await get_poster(search)
     else:
         imdb = None
-    else:
-        imdb = None
 
     try:
         await msg.reply_text(
