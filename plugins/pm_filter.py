@@ -1,5 +1,4 @@
 import asyncio, re, ast, math, logging, pyrogram
-import time
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 from utils import get_shortlink 
@@ -113,15 +112,7 @@ async def pm_spoll_tester(bot, query):
         await k.delete()
 
 
-async def pm_AutoFilter(client, msg, pmspoll=False):   
-    try:
-        await msg.reply_text(
-            "Searching...",
-            disable_notification=True,
-        )
-    except:
-        pass
-
+async def pm_AutoFilter(client, msg, pmspoll=False):    
     if not pmspoll:
         message = msg   
         if message.text.startswith("/"): return  # ignore commands
@@ -167,18 +158,6 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         imdb = await get_poster(search)
     else:
         imdb = None
-
-    try:
-        await msg.reply_text(
-            pmtext.format(search, int(total_results), media_type if media_type else "", int(time.time() - query_time), imdb if imdb else ""),
-            reply_markup=InlineKeyboardMarkup(btn),
-            disable_web_page_preview=True,
-            quote=True,
-            parse_mode="markdown",
-            disable_notification=True,
-        )
-    except:
-        pass
     TEMPLATE = IMDB_TEMPLATE
     if imdb:
         cap = TEMPLATE.format(
@@ -286,6 +265,5 @@ async def pm_spoll_choker(msg):
     btn = [[InlineKeyboardButton(text=movie.strip(), callback_data=f"pmspolling#{user}#{k}")] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'pmspolling#{user}#close_spellcheck')])
     await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?", reply_markup=InlineKeyboardMarkup(btn), quote=True)
-
 
 
