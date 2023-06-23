@@ -116,7 +116,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
     if not pmspoll:
         message = msg  
     try:
-        await msg.reply_to_message.reply_text(
+        await msg.message.reply_to_message(
             "Searching...",
             disable_notification=True,
         )
