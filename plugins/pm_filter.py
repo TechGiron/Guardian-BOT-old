@@ -121,7 +121,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         if 2 < len(message.text) < 100:
             search = message.text
             try:
-                search_message = await msg.message.reply_text(
+                search_message = await msg.message.reply_to_text(
                     "Searching...",
                     disable_notification=True,
                 )
