@@ -192,6 +192,7 @@ async def give_filter(client, message):
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
+        sts = await message.reply('searching...')
         settings = await get_settings(message.chat.id)
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
@@ -209,8 +210,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         settings = await get_settings(msg.message.chat.id)
         message = msg.message.reply_to_message  # msg will be callback query
-        search, files, offset, total_results = spoll
-    sts = await message.reply('searching...')   
+        search, files, offset, total_results = spoll  
     pre = 'filep' if settings['file_secure'] else 'file'
     req = message.from_user.id if message.from_user else 0
 
