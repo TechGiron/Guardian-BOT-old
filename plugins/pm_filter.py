@@ -213,7 +213,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdp.delete()
     else:
-        abc = await sts.edit_text(text=abc, quote=True, reply_markup=InlineKeyboardMarkup(btn))
+        abc = await sts.edit_text(text=cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await abc.delete()        
     if pmspoll:
