@@ -128,6 +128,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
     else:
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = pmspoll
+    sts = await message.reply('searching') 
     pre = 'pmfilep' if PROTECT_CONTENT else 'pmfile'
 
     if SHORT_URL and SHORT_API:          
@@ -212,7 +213,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdp.delete()
     else:
-        abc = await message.reply_text(cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
+        abc = await sts.edit_text(text=cap, quote=True, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await abc.delete()        
     if pmspoll:
