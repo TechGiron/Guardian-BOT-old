@@ -1,4 +1,5 @@
 import asyncio, re, ast, math, logging
+import time
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 from utils import get_shortlink
@@ -211,6 +212,7 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     sts = await message.reply('Searching...💥')
+    start_time = time.time()  # Start measuring elapsed time
     pre = 'filep' if settings['file_secure'] else 'file'
     req = message.from_user.id if message.from_user else 0
 
@@ -295,7 +297,8 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdb.delete()
     else:
-        crl = await sts.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
+        elapsed_time = time.time() - start_time - 2  # Calculate elapsed time
+        crl = await sts.edit_text(text=f"Showing results in {elapsed_time:.2f} sec\n\n{cap}", reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await crl.delete()        
     if spoll:
