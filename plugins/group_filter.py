@@ -297,7 +297,7 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(IMDB_DELET_TIME)
             await cdb.delete()
     else:
-        elapsed_time = time.time() - start_time - 2  # Calculate elapsed time
+        elapsed_time = time.time() - start_time - 1  # Calculate elapsed time
         crl = await sts.edit_text(text=f"Showing results in {elapsed_time:.2f} sec\n\n{cap}", reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(IMDB_DELET_TIME)
         await crl.delete()        
